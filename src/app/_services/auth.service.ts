@@ -14,11 +14,17 @@ login(model:any){
     .pipe(
       map((response:any) => {
         const user = response;
+        console.log(user);
         if(user) {
-          localStorage.setItem('token', user.token);
+          localStorage.setItem('token', user.token); 
+          // key token, value user.token, because JSON object was returned {"token": ...asdf98as79f72w.283y742983ew} and was assigned to user, so user.token
         }
       })
     )
+}
+
+register(model:any){
+  return this.http.post(this.baseUrl + 'register', model);
 }
 
 }

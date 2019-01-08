@@ -1,0 +1,29 @@
+<form #registerForm="ngForm" (ngSubmit)="register()">
+  <h2 class="text-center text-primary">Sign Up</h2>
+  <hr>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="username" [(ngModel)]="model.username" placeholder="Username">
+  </div>
+<!-- 
+  <div class="form-group">  classes are Bootstrap classes check https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp 
+    <label for="favoriteValue">What is your favorite Value?</label>
+    When used together with the <label> element, the for attribute specifies which form element a label is bound to. 
+        When used together with the <output> element, the for attribute specifies the relationship between the result of 
+          the calculation, and the elements used in the calculation. 
+    <select class="form-control" id="favoriteValue">      
+      <option *ngFor="let value of valuesFromHome" >{{value.name}}</option> -->
+      
+      <!-- I deleted [value]="value" attribute, didn't seem necessary, might need it later 
+   </select>
+  </div>
+-->
+  <div class="form-group">
+      <input type="password" class="form-control" required name="passworde" [(ngModel)]="model.password" placeholder="Password">
+  </div>
+
+  <div class="form-group text-center">
+      <button class="btn btn-success" type="submit"> Register </button>
+      <button class="btn btn-default" type="button" (click)="cancel()" > Cancel </button>
+  </div>
+</form>
